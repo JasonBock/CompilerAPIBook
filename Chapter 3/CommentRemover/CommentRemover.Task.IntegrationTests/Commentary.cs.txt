@@ -1,0 +1,18 @@
+﻿namespace CommentRemover.Task.IntegrationTests
+{
+	public class Commentary
+	{
+		/// <summary>
+		/// Adds commentary to a piece of text.
+		/// </summary>
+		/// <param name="text">The text to process.</param>
+		public int Process(string text)
+		{
+			// Here's where the real work goes.
+			return text?.Length ?? 0;
+			/*
+			Maybe more work goes here.
+			*/
+		}
+	}
+}

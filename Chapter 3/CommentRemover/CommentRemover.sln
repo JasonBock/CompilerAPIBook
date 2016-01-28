@@ -7,6 +7,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover", "CommentRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.Tests", "CommentRemover.Tests\CommentRemover.Tests.csproj", "{DA1A1F5E-5FEA-4DEF-BAB9-37929F24BA59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.ConsoleApplication", "CommentRemover.ConsoleApplication\CommentRemover.ConsoleApplication.csproj", "{E0D2F818-857E-4A60-869F-B242340405E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.Task", "CommentRemover.Task\CommentRemover.Task.csproj", "{31552CDC-0D65-4C9A-86CE-8D3FD36F073A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.ConsoleApplication.IntegrationTests", "CommentRemover.ConsoleApplication.IntegrationTests\CommentRemover.ConsoleApplication.IntegrationTests.csproj", "{1B737466-F7A7-4B7D-9A71-D23E62E50388}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E0D2F818-857E-4A60-869F-B242340405E9} = {E0D2F818-857E-4A60-869F-B242340405E9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.Task.IntegrationTests", "CommentRemover.Task.IntegrationTests\CommentRemover.Task.IntegrationTests.csproj", "{E2194AE9-06A3-46E2-9C8B-4E9388BD7532}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31552CDC-0D65-4C9A-86CE-8D3FD36F073A} = {31552CDC-0D65-4C9A-86CE-8D3FD36F073A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemover.Extension", "CommentRemover.Extension\CommentRemover.Extension.csproj", "{94E3C503-4CFE-4EED-9014-D27B762D8308}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +37,26 @@ Global
 		{DA1A1F5E-5FEA-4DEF-BAB9-37929F24BA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1A1F5E-5FEA-4DEF-BAB9-37929F24BA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1A1F5E-5FEA-4DEF-BAB9-37929F24BA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D2F818-857E-4A60-869F-B242340405E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D2F818-857E-4A60-869F-B242340405E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D2F818-857E-4A60-869F-B242340405E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D2F818-857E-4A60-869F-B242340405E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31552CDC-0D65-4C9A-86CE-8D3FD36F073A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31552CDC-0D65-4C9A-86CE-8D3FD36F073A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31552CDC-0D65-4C9A-86CE-8D3FD36F073A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31552CDC-0D65-4C9A-86CE-8D3FD36F073A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B737466-F7A7-4B7D-9A71-D23E62E50388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B737466-F7A7-4B7D-9A71-D23E62E50388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B737466-F7A7-4B7D-9A71-D23E62E50388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B737466-F7A7-4B7D-9A71-D23E62E50388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2194AE9-06A3-46E2-9C8B-4E9388BD7532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2194AE9-06A3-46E2-9C8B-4E9388BD7532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2194AE9-06A3-46E2-9C8B-4E9388BD7532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2194AE9-06A3-46E2-9C8B-4E9388BD7532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E3C503-4CFE-4EED-9014-D27B762D8308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E3C503-4CFE-4EED-9014-D27B762D8308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E3C503-4CFE-4EED-9014-D27B762D8308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E3C503-4CFE-4EED-9014-D27B762D8308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

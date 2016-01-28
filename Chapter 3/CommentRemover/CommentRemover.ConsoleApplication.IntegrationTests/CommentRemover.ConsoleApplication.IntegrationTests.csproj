@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A23725E-4F3C-4D58-8D4C-360F15DC829F}</ProjectGuid>
+    <ProjectGuid>{1B737466-F7A7-4B7D-9A71-D23E62E50388}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommentRemover</RootNamespace>
-    <AssemblyName>CommentRemover</AssemblyName>
+    <RootNamespace>CommentRemover.ConsoleApplication.IntegrationTests</RootNamespace>
+    <AssemblyName>CommentRemover.ConsoleApplication.IntegrationTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -98,9 +98,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\SyntaxNodeExtensions.cs" />
+    <Content Include="Commentary.cs.txt" />
+    <Compile Include="Commentary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkspaceCommentRemover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -110,6 +110,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)CommentRemover.ConsoleApplication Output\CommentRemover.ConsoleApplication.exe" "$(ProjectPath)"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

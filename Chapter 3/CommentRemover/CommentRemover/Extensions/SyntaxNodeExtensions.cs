@@ -19,20 +19,37 @@ namespace CommentRemover.Extensions
 						__.IsKind(SyntaxKind.SingleLineCommentTrivia) ||
 						__.IsKind(SyntaxKind.MultiLineCommentTrivia)));
 
+			var commentCount = 0;
+
 			foreach (var nodeWithComments in nodesWithComments)
 			{
 				var leadingTrivia = nodeWithComments.GetLeadingTrivia();
-				var comments = leadingTrivia.Where(_ =>
-					_.IsKind(SyntaxKind.SingleLineCommentTrivia) ||
-						_.IsKind(SyntaxKind.MultiLineCommentTrivia))
-					.ToArray();
-				triviaToRemove.AddRange(comments);
+
+				for (var i = 0; i < leadingTrivia.Count; i++)
+				{
+					var trivia = leadingTrivia[i];
+
+					if (trivia.IsKind(SyntaxKind.SingleLineCommentTrivia) ||
+						trivia.IsKind(SyntaxKind.MultiLineCommentTrivia))
+					{
+						triviaToRemove.Add(trivia);
+						commentCount++;
+
+						if (i > 0)
+						{
+							var precedingTrivia = leadingTrivia[i - 1];
+
+							if (precedingTrivia.IsKind(SyntaxKind.WhitespaceTrivia))
+							{
+								triviaToRemove.Add(precedingTrivia);
+							}
+						}
+					}
+				}
+
 				triviaToRemove.AddRange(leadingTrivia.Where(_ =>
 					_.IsKind(SyntaxKind.EndOfLineTrivia))
-					.Take(comments.Length));
-				triviaToRemove.AddRange(leadingTrivia.Where(_ =>
-					_.IsKind(SyntaxKind.WhitespaceTrivia))
-					.Take(comments.Length));
+					.Take(commentCount));
 			}
 
 			return triviaToRemove.Count > 0 ?

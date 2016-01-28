@@ -279,3 +279,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Build content directories
+CommentRemover.ConsoleApplication Output/
+CommentRemover.Task Output/
