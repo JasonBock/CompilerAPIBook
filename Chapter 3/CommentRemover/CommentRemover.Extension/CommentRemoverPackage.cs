@@ -25,10 +25,11 @@ namespace CommentRemover.Extension
 	public sealed class CommentRemoverPackage
 		: Package
 	{
+		public const string PackageGuidString = "7e923ca1-8495-48f9-a429-0373e32500d1";
+
 		private DTE dte;
 		private DocumentEventsClass documentEvents;
 		private VisualStudioWorkspace workspace;
-		public const string PackageGuidString = "7e923ca1-8495-48f9-a429-0373e32500d1";
 
 		protected override void Initialize()
 		{
@@ -50,25 +51,29 @@ namespace CommentRemover.Extension
 
 		private void OnDocumentSaved(EnvDTE.Document dteDocument)
 		{
-			var documentId = this.workspace.CurrentSolution.GetDocumentIdsWithFilePath(
-				dteDocument.FullName)[0];
+			var documentIds = this.workspace.CurrentSolution.GetDocumentIdsWithFilePath(
+				dteDocument.FullName);
 
-			var document = this.workspace.CurrentSolution.GetDocument(documentId);
-
-			if (Path.GetExtension(document.FilePath) == ".cs")
+			if(documentIds != null && documentIds.Length == 1)
 			{
-				SyntaxNode root = null;
+				var documentId = documentIds[0];
+				var document = this.workspace.CurrentSolution.GetDocument(documentId);
 
-				if (document.TryGetSyntaxRoot(out root))
+				if (Path.GetExtension(document.FilePath) == ".cs")
 				{
-					var newRoot = root.RemoveComments();
+					SyntaxNode root = null;
 
-					if (newRoot != root)
+					if (document.TryGetSyntaxRoot(out root))
 					{
-						var newSolution = document.Project.Solution
-							.WithDocumentSyntaxRoot(document.Id, newRoot);
-						this.workspace.TryApplyChanges(newSolution);
-						dteDocument.Save();
+						var newRoot = root.RemoveComments();
+
+						if (newRoot != root)
+						{
+							var newSolution = document.Project.Solution
+								.WithDocumentSyntaxRoot(document.Id, newRoot);
+							this.workspace.TryApplyChanges(newSolution);
+							dteDocument.Save();
+						}
 					}
 				}
 			}
