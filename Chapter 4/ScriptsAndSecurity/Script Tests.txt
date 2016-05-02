@@ -1,0 +1,17 @@
+﻿// OK
+People.Where(_ => _.Name.StartsWith("Joe")).Count()
+
+// Should someone be able to do this?
+var person = People.Where(_ => _.Name.StartsWith("Joe")).ToArray()[0]; person.Name = "Changed Name"; person.Save();
+
+// Running file queries
+System.IO.Directory.EnumerateFiles(".").ToList().ForEach(_ => System.Console.Out.WriteLine(_));
+
+// Should not be able to do this
+System.IO.File.ReadAllLines("secrets.txt")[0]
+
+// This doesn't actually hit System.Reflection
+System.Type.GetType("System.IO.File").GetMethod("ReadAllLines", new[] { typeof(string) });
+
+// This uses System.Reflection
+System.Type.GetType("System.IO.File").GetMethod("ReadAllLines", new[] { typeof(string) }).Invoke(null, new[] { "secrets.txt" });

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptingPlayground", "ScriptingPlayground.csproj", "{BA936552-C6D2-45D9-98E8-35FF7175DFE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptingContext", "..\ScriptingContext\ScriptingContext.csproj", "{583AF23D-8844-426F-9F20-CBE153A95D83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA936552-C6D2-45D9-98E8-35FF7175DFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA936552-C6D2-45D9-98E8-35FF7175DFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA936552-C6D2-45D9-98E8-35FF7175DFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA936552-C6D2-45D9-98E8-35FF7175DFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583AF23D-8844-426F-9F20-CBE153A95D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583AF23D-8844-426F-9F20-CBE153A95D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583AF23D-8844-426F-9F20-CBE153A95D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583AF23D-8844-426F-9F20-CBE153A95D83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
