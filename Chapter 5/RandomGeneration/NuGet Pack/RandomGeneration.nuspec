@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>RandomGeneration</id>
+		<version>1.0.0</version>
+		<authors>Jason Bock</authors>
+		<owners>Jason Bock</owners>
+		<description>Generate random numbers within a range.</description>
+		<tags>netframework</tags>
+		<language>en-US</language>
+		<dependencies>
+			<dependency id="Spackle" version="7.1.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- .NET 4.6 Client -->
+		<file src="RandomGeneration.dll" target="lib\net46" />
+	</files>
+</package>
