@@ -3,7 +3,7 @@ var configuration = Argument<string>("configuration", "Release");
 var solution = "RandomGeneration.sln";
 
 Task("Clean")
-	.Does(() =>
+		.Does(() =>
 	{
 		CleanDirectories("./**/bin/" + configuration);
 		CleanDirectories("./**/obj/" + configuration);
