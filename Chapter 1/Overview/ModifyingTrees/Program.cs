@@ -34,7 +34,7 @@ public class ContainsMethods
 
 		private static void ModifyTreeViaRewriter(SyntaxTree tree)
 		{
-			Console.Out.WriteLine(nameof(Program.ModifyTreeViaTree));
+			Console.Out.WriteLine(nameof(Program.ModifyTreeViaRewriter));
 
 			Console.Out.WriteLine(tree);
 			var newTree = new MethodRewriter().Visit(tree.GetRoot());
